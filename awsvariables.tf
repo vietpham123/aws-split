@@ -16,7 +16,7 @@ variable "secret_key" {
 
 variable "region" {
     type = string
-    default="<%=customOptions.awsRegion%>"
+    default = "<%=customOptions.awsRegion%>"
 }
 
 ################################################
@@ -25,15 +25,15 @@ variable "region" {
 
 variable "compute_name" {
     type = string
-    default="<%=customOptions.awsCompute%>"
+    default = "<%=customOptions.awsCompute%>"
 }
 
 variable "vpc_name" {
     type = string
-    default="<%=customOptions.awsVPC%>"
+    default = "<%=customOptions.awsVPC%>"
 }
 
 variable "awscidr" {
     type = string
-    default="<%customOptions.awsNetwork%>"
+    default = "<%=customOptions.awsNetwork%>"
 }
