@@ -35,5 +35,5 @@ variable "vpc_name" {
 
 variable "awscidr" {
     type = string
-    default="<%customOptions.awsCIDR%>"
+    default="<%customOptions.awsNetwork%>"
 }
