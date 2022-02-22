@@ -1,9 +1,9 @@
 ###########################################################
-# Create a new VPC, and associate the 10.0.0.0/16 space   
+# Create a new VPC 
 ###########################################################
 
 resource "aws_vpc" "TFVPC" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = "var.cidr"
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
