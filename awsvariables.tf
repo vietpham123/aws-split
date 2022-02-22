@@ -32,3 +32,8 @@ variable "vpc_name" {
     type = string
     default="<%=customOptions.awsVPC%>"
 }
+
+variable "awscidr" {
+    type = string
+    default="<%customOptions.awsCIDR%>"
+}
