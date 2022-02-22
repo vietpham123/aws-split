@@ -3,7 +3,7 @@
 ###########################################################
 
 resource "aws_vpc" "TFVPC" {
-  cidr_block           = "var.cidr"
+  cidr_block           = "var.awscidr"
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
