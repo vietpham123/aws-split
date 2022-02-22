@@ -3,7 +3,7 @@
 ###########################################################
 
 resource "aws_vpc" "TFVPC" {
-  cidr_block           = "var.awscidr"
+  cidr_block           = var.awscidr
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
@@ -77,7 +77,7 @@ data "aws_availability_zones" "AZs" {
 resource "aws_subnet" "WebFarm" {
   availability_zone = element(data.aws_availability_zones.AZs.names, 0)
   vpc_id            = aws_vpc.TFVPC.id
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = var.awscidr
   map_public_ip_on_launch = true 
     tags = {
     Name = "${var.vpc_name}_Web_Subnet"
@@ -93,7 +93,7 @@ resource "aws_subnet" "WebFarm" {
 resource "aws_subnet" "DataFarm" {
   availability_zone = element(data.aws_availability_zones.AZs.names, 1)
   vpc_id            = aws_vpc.TFVPC.id
-  cidr_block        = "10.0.2.0/24"
+  cidr_block        = var.awscidr
     tags = {
     Name = "${var.vpc_name}_Data_Subnet"
   }
